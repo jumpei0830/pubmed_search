@@ -9,7 +9,9 @@ import io
 
 # タイトルとヘッダーの表示
 st.title("PubMed検索アプリ")
-st.header("PubMedからヒットした論文のabstract tableを作成します。ヒット数が多いとフリーズする可能性があります。")
+st.header("PubMedからヒットした論文のabstract tableを作成します。")
+
+st.write("好きな単語を入力してください。ヒット数が多いとフリーズするかもしれません。")
 
 # ユーザー入力の取得
 query = st.text_input("検索したい単語を入力してください")
