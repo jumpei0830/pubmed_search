@@ -9,7 +9,7 @@ import io
 
 # タイトルとヘッダーの表示
 st.title("PubMed検索アプリ")
-st.header("PubMedから論文を検索して取得するアプリ")
+st.header("PubMedからヒットした論文のabstract tableを作成します。ヒット数が多いとフリーズする可能性があります。")
 
 # ユーザー入力の取得
 query = st.text_input("検索したい単語を入力してください")
@@ -72,5 +72,5 @@ if st.button("検索"):
 
     st.write("タイトルとアブストラクトをresult_table.csvファイルに書き込みました。上部のボタンからダウンロードすることができます。")
     
-    st.write("アブストラクのワードクラウドを作成します。")
+ 
 
