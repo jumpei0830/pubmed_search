@@ -5,13 +5,18 @@ import requests
 import xml.etree.ElementTree as et
 import csv
 import io
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 
 
 # タイトルとヘッダーの表示
 st.title("PubMed検索アプリ")
-st.header("PubMedから論文を検索して取得するアプリ")
+st.header("ヒットした論文のアブストラクトテーブルを作成してくれます！")
+
+markdown = """
+注意：
+・　検索ボタンを押すと自動で保存までするので、ヒット数が多いと止まることがあります。
+
+"""
+st.markdown(markdown)
 
 # ユーザー入力の取得
 query = st.text_input("検索したい単語を入力してください")
@@ -73,30 +78,4 @@ if st.button("検索"):
     st.download_button("DOWNLOAD    result_table.csv", result_csv.getvalue().encode("utf-8"), "result_table.csv", "Click here to download")
 
     st.write("タイトルとアブストラクトをresult_table.csvファイルに書き込みました。上部のボタンからダウンロードすることができます。")
-    
-    st.write("アブストラクのワードクラウドを作成します。")
-
-    # 警告メッセージを非表示にする
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-
-    # アブストラクトのテキストデータを取得
-    abstracts = []
-    for article in root.findall(".//PubmedArticle"):
-        try:
-           abstract = article.findtext(".//AbstractText") or ""
-           abstracts.append(abstract.strip())
-        except:
-            pass
-
-    # アブストラクトのテキストを結合
-    text = " ".join(abstracts)
-
-    # Word Cloudの生成
-    wordcloud = WordCloud().generate(text)
-
-    # Word Cloudの表示
-    plt.figure(figsize=(10, 6))
-    plt.imshow(wordcloud, interpolation="bilinear")
-    plt.axis("off")
-    st.pyplot()
     
