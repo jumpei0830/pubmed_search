@@ -1,13 +1,32 @@
 import streamlit as st
 import PyPDF4
-import nltk
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import io
 import csv
+import nltk
 
 nltk.download('punkt')
+
+# タイトルとヘッダーの表示
+st.title("論文PDF要約アプリ")
+st.header("英語論文を任意の文数に文数に要約してくれます！")
+
+markdown = """
+
+**使い方：**    
+要約したい英語論文をアップロードすると一つずつ要約してくれます
+複数ある時はまとめてcsvファイルとして保存することもできます。
+  
+**注意：**  
+・　処理に少し時間がかかるため、大量のPDFや文数はやめましょう
+・　自然言語処理nltkのpunktモジュール使用していますが、精度がイマイチな時があります
+・　chatGPTなどのAIを使う手もありますが有料なので未実装です
+"""
+st.markdown(markdown)
+
+
 
 ##アップロードのフェーズ
 st.header("１：論文をアップロードする。")
@@ -112,4 +131,11 @@ if st.button("全体の要約結果を表示する"):
 
 
     
+markdown2="""
+備考：  
+・DeepL翻訳やAI要約は有料のため未実装  
+・ワードクラウドの作成はエラーのため未実装  
+・full text articleの取得は著作権上実装不可（pdfからテキスト化と自然言語要約は実装可能）  
 
+"""
+st.markdown(markdown2)
