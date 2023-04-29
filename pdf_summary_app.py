@@ -7,7 +7,7 @@ import io
 import csv
 
 ##アップロードのフェーズ
-st.header("１：論文をアップロードする")
+st.header("１：論文をアップロードする。")
 # PDFファイルのアップロード
 uploaded_files = st.file_uploader("PDFファイルをアップロードしてください", type="pdf", accept_multiple_files=True)
 
