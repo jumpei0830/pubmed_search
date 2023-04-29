@@ -13,8 +13,10 @@
 
 ＜プロセス＞　※論文にするには現状圧倒的に信頼性の低い方法です. 
 1. 任意に設定した検索式でpubmedからヒットした論文のアブストラクトテーブルを作る　(search_app.py).   
+URL: https://jumpei0830-pubmed-search-search-app-3db7f3.streamlit.app/        
 2. タイトルやアブストラクトの内容から一次スクリーニングをして組み入れ論文を選択する　(検討中)
 3. 組み入れ論文を熟読し、内容を要約する　（pdf_summary_app.py）.   
+URL: https://jumpei0830-pubmed-search-pdf-summary-app-orqhm0.streamlit.app/     
 
 １、３について自動化ができました。2は精度が低いのと、著作権上全文入手が自動では出来ません。
 
