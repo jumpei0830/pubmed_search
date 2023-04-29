@@ -11,7 +11,7 @@ nltk.download('punkt')
 
 # タイトルとヘッダーの表示
 st.title("論文PDF要約アプリ")
-st.header("英語論文を任意の文数に文数に要約してくれます！")
+st.header("英語論文を任意の文数に要約してくれます！")
 
 markdown = """
 
