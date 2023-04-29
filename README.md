@@ -20,7 +20,7 @@
 
 
 
-＜メモ＞. 
+＜メモ＞.   
 ・local vscode上で作成し、streamlit runで動作確認したのち、githubにアップロード、streamlitにデプロイ.   
 ・streamlitがpython3.10までのため今後の作成はpython3.10にて作成予定(pipが3.10、pip3が3.11に注意).   
 ・requirements.txtで必要なパッケージとバージョンの記述、pip freezeからコピペ？pip -Vで確認    
