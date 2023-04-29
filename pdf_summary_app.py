@@ -7,6 +7,8 @@ from sumy.summarizers.lex_rank import LexRankSummarizer
 import io
 import csv
 
+nltk.download('punkt')
+
 ##アップロードのフェーズ
 st.header("１：論文をアップロードする。")
 # PDFファイルのアップロード
