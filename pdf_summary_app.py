@@ -1,5 +1,5 @@
 import streamlit as st
-import fitz
+import PyPDF4
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
@@ -24,10 +24,14 @@ csv_data = []
 
 for index, uploaded_file in enumerate(uploaded_files):
     # アップロードされたPDFファイルをテキスト化
-    doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+    pdf_reader = PyPDF4.PdfFileReader(uploaded_file)
+    num_pages = pdf_reader.numPages
+    
     text = ""
-    for page in doc:
-        text += page.get_text()
+    for page_number in range(num_pages):
+        page = pdf_reader.pages[page_number]
+        text += page.extractText()
+        
     all_texts.append(text)  # テキストデータをリストに追加
 
     # テキスト化された結果を表示
