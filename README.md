@@ -18,7 +18,8 @@ URL: https://jumpei0830-pubmed-search-search-app-3db7f3.streamlit.app/
 3. 組み入れ論文を熟読し、内容を要約する　（pdf_summary_app.py）.   
 URL: https://jumpei0830-pubmed-search-pdf-summary-app-orqhm0.streamlit.app/     
 
-１、３について自動化ができました。2は精度が低いのと、著作権上全文入手が自動では出来ません。
+１、３について自動化ができました。2は精度が低いのと、著作権上全文入手が自動では出来ません。    
+作っておいて何ですが、３の精度が低いのであまり使い物にならないと思います。
 
 
 
